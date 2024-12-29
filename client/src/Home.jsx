@@ -13,7 +13,7 @@ const Home = () => {
     // Fetch todos on component mount
     useEffect(() => {
         axios
-            .get("https://todobackend-tan.vercel.app//get") // Corrected base URL
+            .get("http://localhost:4000/get") // Corrected base URL
             .then((res) => {
                 setTodos(res.data);
             })
@@ -25,7 +25,7 @@ const Home = () => {
     // Toggle the `done` status of a todo
     const handleEdit = (id) => {
         axios
-            .put(`https://todobackend-tan.vercel.app//update/${id}`) // Pass `id` in URL
+            .put(`http://localhost:4000/update/${id}`) // Pass `id` in URL
             .then((res) => {
                 setTodos((prevTodos) =>
                     prevTodos.map((todo) =>
@@ -41,7 +41,7 @@ const Home = () => {
     // Delete a todo
     const handleDelete = (id) => {
         axios
-            .delete(`https://todobackend-tan.vercel.app/delete/${id}`) // Corrected route
+            .delete(`http://localhost:4000/delete/${id}`) // Corrected route
             .then((res) => {
                 setTodos((prevTodos) =>
                     prevTodos.filter((todo) => todo._id !== id)

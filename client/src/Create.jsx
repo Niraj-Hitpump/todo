@@ -19,7 +19,7 @@ const Create = ({ setTodos, todos }) => {
         setLoading(true);
 
         axios
-            .post("https://todobackend-tan.vercel.app//add", { task: truncatedTask })
+            .post("http://localhost:4000/add", { task: truncatedTask })
             .then((res) => {
                 setTodos([...todos, { _id: res.data._id, task: truncatedTask, done: false }]);
                 setTask(""); // Clear input after adding
@@ -35,7 +35,7 @@ const Create = ({ setTodos, todos }) => {
     const handleDelete = (id) => {
         setLoading(true);  // Start loading during the delete operation
         axios
-            .delete(`https://todobackend-tan.vercel.app//delete/${id}`)
+            .delete(`http://localhost:4000/delete/${id}`)
             .then((res) => {
                 if (res.status === 200) {
                     setTodos((prevTodos) =>
@@ -62,7 +62,7 @@ const Create = ({ setTodos, todos }) => {
 
     setLoading(true);
     axios
-        .put(`https://todobackend-tan.vercel.app//update/${id}`, { task, done: false })
+        .put(`http://localhost:4000/update/${id}`, { task, done: false })
         .then((res) => {
             setTodos((prevTodos) =>
                 prevTodos.map((todo) =>
