@@ -1,0 +1,211 @@
+/* Home Container */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background: #f4f4f9;
+    min-height: 100vh;
+}
+
+/* Input Field */
+.create_input {
+    width: 300px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.create_input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Button */
+.create_button {
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.create_button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Task Container */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure items are spaced out */
+    width: 360px;
+    background-color: #333;
+    color: white;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkbox Section */
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.line-through {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.checkbox .icon {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Icon Hover */
+.checkbox .icon:hover {
+    transform: scale(1.2);
+}
+
+/* Task Text */
+.task div span {
+    margin: 0px 10px;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.task div span:hover {
+    color: #4caf50;
+}
+
+/* Icon Buttons */
+.task div .icon {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Icon hover effects */
+.task div .icon:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+/* Media Queries for Medium Devices */
+@media (max-width: 768px) {
+    .home {
+        padding: 20px; /* Adjust padding for medium screens */
+    }
+
+    .create_input {
+        width: 100%; /* Make input field responsive */
+        max-width: 300px; /* Limit max width */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .create_button {
+        width: 50%; /* Make button responsive */
+        padding: 10px;
+        font-size: 14px;
+        margin-left: 75px;
+    }
+    .create_button :hover {
+        background-color: #555;
+        transform: scale(1.05);
+    }
+
+    .task {
+        width: 100%; /* Make task container responsive */
+        padding: 20px;
+        font-size: 14px;
+        flex-direction: row; /* Ensure horizontal alignment of task elements */
+        align-items: center; /* Center items inside task box */
+    }
+
+    .task div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Align items in the center */
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    .task div span {
+        font-size: 14px; /* Adjust font size for task text */
+        flex: 1; /* Allow span to take available space */
+    }
+
+    .task div .icon {
+        font-size: 18px; /* Adjust icon size */
+        margin-left: 10px; /* Add margin to the left of the icon */
+    }
+    .task div .icon:hover {
+        color: #e74c3c;
+        transform: scale(1.1);
+    }
+
+    .checkbox .icon {
+        font-size: 18px; /* Adjust icon size */
+    }
+    .checkbox .icon:hover {
+        color: #4caf50;
+        transform: scale(1.2);
+    }
+}
+
+    /* Layout Adjustments */
+    .task {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: space-between;
+         /* Ensure spacing between items */
+    }
+
+    .task div {
+        flex: 1; /* Make the task text area flexible */
+    }
+
+    .checkbox {
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .create_input,
+    .create_button {
+        margin-bottom: 10px; /* Add spacing between elements */
+    }
+
+    /* Fix for Delete Icon Alignment */
+    .task .icon {
+        margin-left: 10px; /* Add margin to ensure proper spacing */
+        display: flex; /* Ensure it's properly aligned */
+    }
+
+    /* Fix delete button at the end of the task box */
+    .task {
+        justify-content: space-between; /* Keep delete icon at the far right */
+    }
+
+    .task div:last-child {
+        margin-left: 10px; /* Give space between the text and delete icon */
+        display: flex;
+        justify-content: flex-end; /* Ensure the icon is on the far right */
+        align-items: center; /* Align the delete icon vertically */
+    }
+}
